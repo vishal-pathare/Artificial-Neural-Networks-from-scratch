@@ -157,6 +157,8 @@ class ANN:
                 correct += 1
         print ("Accuracy of the set is {}".format((correct / AL.shape[0]) * 100))
 
+    '''Helper functions'''
+
     def relu(self, Z):
         return np.maximum(0, Z), Z
 
