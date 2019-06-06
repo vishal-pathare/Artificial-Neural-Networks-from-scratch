@@ -1,5 +1,4 @@
 # Artificial-Neural-Networks
-<h2>Artificial neural networks written from scratch</h2><br>
 <h3>Libraries used</h3>
 <ol>
   <li>numpy</li>
