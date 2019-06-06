@@ -4,7 +4,6 @@
   <li>numpy</li>
   <li>matplotlib</li>
 </ol>
-<br>
 <H3>Steps to use : </h3>
 <ol>
   <li>Call init_parameters() to initialize the parameters<br>Arguments required are as mentioned in code<br>Returns a parameter dictionary</li>
