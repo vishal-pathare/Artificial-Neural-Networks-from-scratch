@@ -1,6 +1,7 @@
 import numpy as np
 
 #Class to be imported by user to develop neural network
+
 class ANN:
 
     def init_parameters(self, dims_list):
