@@ -4,6 +4,13 @@ import numpy as np
 
 class ANN:
 
+    '''USER SHOULD ONLY CALL : 
+        1.init_parameters
+        2.train
+        3.test
+        4.predict
+    '''
+
     def init_parameters(self, dims_list):
         
         #Returns a dictionary of parameters(weights and biases)
