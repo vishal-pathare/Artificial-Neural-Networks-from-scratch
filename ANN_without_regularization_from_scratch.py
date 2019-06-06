@@ -45,8 +45,8 @@ class ANN:
 
     def L_layers_forward(self, X, parameters):
 
-        #Input : input layer activations and initialized parameter dictionary
-        #Output : Output layer activations and list of caches corresponding to each layer 
+        '''Input : input layer activations and initialized parameter dictionary
+        Output : Output layer activations and list of caches corresponding to each layer '''
 
         caches = []
         L = len(parameters) // 2
