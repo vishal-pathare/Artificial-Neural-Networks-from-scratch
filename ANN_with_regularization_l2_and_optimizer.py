@@ -176,7 +176,8 @@ class ANN:
     def train(self, X, Y, parameters, learning_rate = 0.075, no_of_iterations = 1000, print_cost = False, batch_size = 64, optimizer = "gradient_descent_optimizer"):
 
         #Trains the neural network according to training set provided by user and prints cost after every 50 iterations
-
+        # optimizer can be gradient descent of adam
+        
         if optimizer == "adam_optimizer":
             v, s = self.adam_initializer(parameters)
         for i in range(no_of_iterations):
