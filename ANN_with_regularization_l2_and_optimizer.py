@@ -13,7 +13,7 @@ class ANN:
     '''
 
     def __init__(self, no_of_layers):
-        self.no_of_layers = no_of_layers
+        self.no_of_layers = 0
     
     def init_parameters(self, dims_list):
         
@@ -22,6 +22,7 @@ class ANN:
 
         parameters = {}
         L = len(dims_list)
+        self.no_of_layers = L
         for i in range(1, L):
             parameters["W" + str(i)] = np.random.randn(dims_list[i], dims_list[i - 1]) * 0.01
             parameters["b" + str(i)] = np.random.randn(dims_list[i], 1) * 0.01
@@ -69,7 +70,7 @@ class ANN:
         #Calculates cost using cross entropy loss
 
         n = Y.shape[1]
-        cost = -np.sum((Y * np.log(AL) + (1 - Y) * np.log(1 - AL))) / n
+        cost = -np.sum(Y * np.log(AL + 1e-8) + (1 - Y) * np.log(1 - AL + 1e-8)) / n
         L2_sum = 0
         for i in range(1, self.no_of_layers):
             L2_sum += np.sum(np.square(parameters["W" + str(i)]))
@@ -119,7 +120,7 @@ class ANN:
         Y = Y.reshape(AL.shape)
         L = len(caches)
         #Calculate gradient of output layer
-        dAL = -np.divide(Y, AL) + np.divide((1 - Y), (1 - AL))
+        dAL = -np.divide(Y, (AL + 1e-8)) + np.divide((1 - Y), (1 - AL + 1e-8))
         dA_prev, dW, db = self.activation_back(dAL, caches[L - 1], "sigmoid")
         grads["dA" + str(L - 1)] = dA_prev
         grads["dW" + str(L)] = dW
@@ -195,8 +196,7 @@ class ANN:
             if print_cost == True and i % 50 == 0:
                 print("Cost of {}th iteration is {}".format(i, cost1))
             print (i)
-        AL = self.L_layers_forward(X, parameters)
-        print ("Final cost is : ", self.cost(AL, Y, parameters))
+        print ("Final cost is : ", cost1)
         return parameters
 
     def predict(self, X, parameters):
