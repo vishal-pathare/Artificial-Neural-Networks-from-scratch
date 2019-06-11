@@ -12,9 +12,6 @@ class ANN:
         4.predict
     '''
 
-    def __init__(self, no_of_layers):
-        self.no_of_layers = 0
-    
     def init_parameters(self, dims_list):
         
         #Returns an initialized dictionary of parameters(weights and biases)
