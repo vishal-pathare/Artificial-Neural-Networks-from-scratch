@@ -216,6 +216,18 @@ class ANN:
                 correct += 1
         print ("Accuracy of the set is {}".format((correct / AL.shape[0]) * 100))
 
+    def test_for_single(self, X, Y, parameters):
+
+        AL, _ = self.L_layers_forward(X, parameters)
+        AL = np.greater(AL, 0.5).astype(int)
+        correct = 0
+        AL = AL.T
+        Y = Y.T
+        for i in range(AL.shape[0]):
+            if AL[i] == Y[i]:
+                correct += 1
+        print ("Accuracy of the set is {}".format((correct / AL.shape[0]) * 100))
+
     '''Helper functions'''
 
     def relu(self, Z):
