@@ -13,5 +13,5 @@
 </ol>
 <H3>Notes : </h3>
 <ol>
-  <li>It is mandatory to one hot encode the activations of the output layer of the training and test set.</li>
+  <li>predict() only outputs the one hot encoded output of the neural network</li>
 </ol>
