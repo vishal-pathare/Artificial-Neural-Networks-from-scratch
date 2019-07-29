@@ -13,5 +13,6 @@
 </ol>
 <H3>Notes : </h3>
 <ol>
-  <li>predict() only outputs the one hot encoded output of the neural network</li>
+  <li>The code is largely inspired from the programming assignment in Andrew Ng's Neural Networks and Deep Learning course on Coursera
+  <li>predict() only outputs the one hot encoding d output of the neural network</li>
 </ol>
